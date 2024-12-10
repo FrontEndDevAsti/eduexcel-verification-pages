@@ -3,70 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Verification</title>
+    <title>EduExcell Student Verification</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800|Open+Sans:300,400,600,700"
       rel="stylesheet"
     />
     <link rel="icon" href="assets/images/Icon.png" type="image/png" />
-    <style>
-      body {
-        font-family: "Montserrat", "Open Sans", sans-serif;
-      }
-
-      /* Loading animatiosn */
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      /* Popup Slide-In Animation */
-      @keyframes slideInUp {
-        0% {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Cross icon animation */
-      @keyframes crossmark {
-        0% {
-          stroke-dashoffset: 50;
-        }
-        100% {
-          stroke-dashoffset: 0;
-        }
-      }
-
-      .crossmark-circle {
-        animation: fadeIn 1.5s ease-out;
-      }
-
-      .crossmark-path {
-        animation: crossmark 1s ease-in-out forwards;
-        stroke-dasharray: 50;
-        stroke-dashoffset: 50;
-      }
-
-      /* Apply slide-in animation to popup */
-      .popup-slide {
-        animation: slideInUp 0.5s ease-out forwards;
-      }
-
-      /* Remove text decoration from links */
-      a {
-        text-decoration: none;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body class="bg-gray-200 flex items-center justify-center min-h-screen">
@@ -75,7 +19,7 @@
       <div
         class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"
       ></div>
-      <p class="text-lg font-medium text-black">Verifying student...</p>
+      <p class="text-lg font-medium text-black">Verifying Student...</p>
     </div>
 
     <!-- Failed Verification Popup -->

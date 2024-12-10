@@ -3,68 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Verification</title>
+    <title>EduExcell Student Verification</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800|Open+Sans:300,400,600,700"
       rel="stylesheet"
     />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
     <link rel="icon" href="assets/images/Icon.png" type="image/png" />
-    <style>
-      body {
-        font-family: "Montserrat", "Open Sans", sans-serif;
-      }
-
-      /* Loading animation */
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      /* Popup Slide-In Animation */
-      @keyframes slideInUp {
-        0% {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Pending icon animation */
-      @keyframes pendingmark {
-        0% {
-          transform: scale(0);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      .pendingmark-circle {
-        animation: pendingmark 0.5s ease-in-out forwards;
-      }
-
-      /* Apply slide-in animation to popup */
-      .popup-slide {
-        animation: slideInUp 0.5s ease-out forwards;
-      }
-
-      /* Remove text decoration from links */
-      a {
-        text-decoration: none;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body class="bg-gray-200 flex items-center justify-center min-h-screen">
@@ -73,7 +19,7 @@
       <div
         class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"
       ></div>
-      <p class="text-lg font-medium text-black">Verifying student...</p>
+      <p class="text-lg font-medium text-black">Verifying Student...</p>
     </div>
 
     <!-- Pending Verification Popup -->
@@ -97,11 +43,27 @@
         <!-- Pending Message -->
         <div>
           <div class="flex justify-center items-center mb-4">
-            <!-- Exclamation mark inside a circle (Font Awesome) -->
+            <!-- Exclamation mark inside a circle (SVG) -->
             <div
-              class="pendingmark-circle w-20 h-20 bg-yellow-500 text-white rounded-full flex items-center justify-center text-4xl"
+              class="pendingmark-circle w-20 h-20 flex items-center justify-center"
             >
-              <i class="fas fa-exclamation"></i>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                class="w-full h-full"
+              >
+                <circle cx="32" cy="32" r="30" fill="#fbbf24"></circle>
+                <line
+                  x1="32"
+                  y1="18"
+                  x2="32"
+                  y2="38"
+                  stroke="#ffffff"
+                  stroke-width="5"
+                  stroke-linecap="round"
+                ></line>
+                <circle cx="32" cy="46" r="3" fill="#ffffff"></circle>
+              </svg>
             </div>
           </div>
           <h1 class="text-2xl font-bold text-gray-800">Verification Pending</h1>
@@ -118,7 +80,7 @@
                 href="tel:+14046000396"
                 class="text-gray-600 hover:underline font-bold"
               >
-              +1 404 600 0396
+                +1 404 600 0396
               </a>
             </p>
             <p>
@@ -126,7 +88,7 @@
                 href="mailto:info@eduexcell.org.uk"
                 class="text-gray-600 hover:underline font-bold"
               >
-              info@eduexcell.org.uk
+                info@eduexcell.org.uk
               </a>
             </p>
           </div>
