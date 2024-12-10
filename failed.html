@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800|Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", "Open Sans", sans-serif;
+      }
+
+      /* Loading animation */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Popup Slide-In Animation */
+      @keyframes slideInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Cross icon animation */
+      @keyframes crossmark {
+        0% {
+          stroke-dashoffset: 50;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      .crossmark-circle {
+        animation: fadeIn 1.5s ease-out;
+      }
+
+      .crossmark-path {
+        animation: crossmark 1s ease-in-out forwards;
+        stroke-dasharray: 50;
+        stroke-dashoffset: 50;
+      }
+
+      /* Apply slide-in animation to popup */
+      .popup-slide {
+        animation: slideInUp 0.5s ease-out forwards;
+      }
+
+      /* Remove text decoration from links */
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-200 flex items-center justify-center min-h-screen">
+    <!-- Loading Animation -->
+    <div id="loading" class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"
+      ></div>
+      <p class="text-lg font-medium text-black">Verifying student...</p>
+    </div>
+
+    <!-- Failed Verification Popup -->
+    <div
+      id="popup-overlay"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div
+        id="failed"
+        class="w-full max-w-md text-center bg-white rounded-lg shadow-lg p-8 m-5 md:m-0 popup-slide"
+      >
+        <!-- Logo -->
+        <div class="mb-6 flex justify-center">
+          <img src="assets/images/EduExcell.jpg" alt="Website Logo" class="h-12" />
+        </div>
+
+        <!-- Failed Message -->
+        <div>
+          <div class="flex justify-center items-center mb-4">
+            <!-- Crossmark SVG -->
+            <svg
+              class="crossmark-circle w-20 h-20 text-red-500"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 52 52"
+            >
+              <circle
+                cx="26"
+                cy="26"
+                r="25"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              ></circle>
+              <path
+                class="crossmark-path"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                d="M16 16 L36 36 M36 16 L16 36"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold text-gray-800">Verification Failed</h1>
+          <p class="text-gray-600 mt-2">
+            Unfortunately, this student has not met the required criteria for verification.
+          </p>
+          <p class="text-gray-600 mt-4">
+            For more information, please contact us:
+          </p>
+          <div class="mt-4">
+            <p>
+              <a href="tel:+1234567890" class="text-gray-600 hover:underline font-bold">
+                +123 456 7890
+              </a>
+            </p>
+            <p>
+              <a
+                href="mailto:support@eduexcell.com"
+                class="text-gray-600 hover:underline font-bold"
+              >
+                support@eduexcell.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Simulate a verification delay
+      setTimeout(() => {
+        document.getElementById("loading").classList.add("hidden");
+        const popupOverlay = document.getElementById("popup-overlay");
+        popupOverlay.classList.remove("hidden");
+      }, 2000); // 2 seconds delay
+    </script>
+  </body>
+</html>

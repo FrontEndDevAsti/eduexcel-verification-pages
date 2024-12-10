@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verification Pending</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800|Open+Sans:300,400,600,700"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', 'Open Sans', sans-serif;
+    }
+
+    /* Loading animation */
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Pending icon animation */
+    @keyframes pendingAnimation {
+      0% {
+        stroke-dashoffset: 50;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .pending-circle {
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .pending-path {
+      animation: pendingAnimation 1s ease-in-out forwards;
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <!-- Loading Animation -->
+  <div id="loading" class="flex flex-col items-center absolute">
+    <div class="w-16 h-16 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+    <p class="text-lg font-medium text-gray-600">Verifying student...</p>
+  </div>
+
+  <!-- Verification Pending Box -->
+  <div id="pendingBox" class="hidden w-full max-w-md text-center bg-white rounded-lg shadow-lg p-8">
+    <div class="flex justify-center items-center mb-4">
+      <!-- Pending Icon SVG -->
+      <svg class="pending-circle w-20 h-20 text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+        <circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-width="2"></circle>
+        <path class="pending-path" fill="none" stroke="currentColor" stroke-width="3" d="M26 14v12h10"
+          stroke-linecap="round" />
+      </svg>
+    </div>
+    <h1 class="text-2xl font-bold text-gray-800">Verification Pending</h1>
+    <p class="text-gray-600 mt-2">The verification process for this student is still pending. Please check back later
+      or contact us for assistance.</p>
+    <div class="mt-4">
+      <p class="text-gray-600"><strong>Email:</strong> support@example.com</p>
+      <p class="text-gray-600"><strong>Phone:</strong> +1 (555) 123-4567</p>
+    </div>
+  </div>
+
+  <script>
+    // Simulate a verification delay
+    setTimeout(() => {
+      document.getElementById("loading").classList.add("hidden");
+      document.getElementById("pendingBox").classList.remove("hidden");
+    }, 2000); // 2 seconds delay
+  </script>
+
+</body>
+
+</html>
